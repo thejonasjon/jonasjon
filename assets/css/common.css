@@ -1,0 +1,446 @@
+/* General CSS */
+@import url("/assets/css/resets.css");
+
+/* Variable */
+:root {
+    /* Colors */
+    --primary-clr-400: #124096;
+    --primary-clr-400-80: #124096CC;
+    --primary-clr-400-60: #12409699;
+    --primary-clr-400-20: #12409633;
+
+    --primary-clr-10: #1240961A;
+    --primary-clr-5: #1240960D;
+    --primary-clr-100: #262626;
+
+
+    --clr-secondary-400: #F0ECF3;
+    --cl-secondary-300: rgba(61, 64, 91, 0.8);
+    --cl-seondary-200: #515368;
+
+    --clr-faq: #F5E6CC;
+
+    --clr-white-400: #ffffff;
+    --clr-white-300: #f6f5f6;
+    --clr-white-200: #ededf2;
+    --clr-white-400-1: #ffffff94;
+
+    --clr-grey-300: #262626;
+    --clr-grey-200: #636262;
+    --clr-grey-100: #AEB9C5;
+
+    --clr-black-400: #000000;
+    --clr-black-300: #242424;
+    --clr-black-200: #0e071d94;
+
+    /* Sizes */
+    --size-1: 0.1rem;
+    --size-2: 0.2rem;
+    --size-3: 0.3rem;
+    --size-4: 0.4rem;
+    --size-5: 0.5rem;
+    --size-08: 0.8rem;
+    --size-10: 1rem;
+    --size-12: 1.2rem;
+    --size-14: 1.4rem;
+    --size-15: 1.5rem;
+    --size-16: 1.6rem;
+    --size-18: 1.8rem;
+    --size-1875: 1.875rem;
+    --size-20: 2rem;
+    --size-22: 2.2rem;
+    --size-24: 2.4rem;
+    --size-25: 2.5rem;
+    --size-29: 2.9rem;
+    --size-30: 3rem;
+    --size-32: 3.2rem;
+    --size-34: 3.4rem;
+    --size-35: 3.5rem;
+    --size-36: 3.6rem;
+    --size-3654: 3.654rem;
+    --size-38: 3.8rem;
+    --size-40: 4rem;
+    --size-42: 4.2rem;
+    --size-45: 4.5rem;
+    --size-46: 4.6rem;
+    --size-48: 4.8rem;
+    --size-49: 4.9rem;
+    --size-50: 5rem;
+    --size-52: 5.2rem;
+    --size-54: 5.4rem;
+    --size-55: 5.5rem;
+    --size-56: 5.6rem;
+    --size-58: 5.8rem;
+    --size-60: 6rem;
+    --size-62: 6.2rem;
+    --size-64: 6.4rem;
+    --size-65: 6.5rem;
+    --size-66: 6.6rem;
+    --size-70: 7rem;
+    --size-72: 7.2rem;
+    --size-95: 9.5rem;
+    --size-100: 10rem;
+    --size-120: 12rem;
+    --size-200: 20rem;
+    --size-250: 25rem;
+    --size-270: 27rem;
+    --size-300: 30rem;
+}
+
+/* Buttons */
+button {
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+  border: none;
+  padding: 0.5em 1em;
+  border-radius: var(--border-radius);
+  background-color: var(--primary-color);
+  color: white;
+  transition: background-color var(--transition-speed);
+}
+
+/* Container */
+.container {
+  width: 94%;
+  margin: 0 auto;
+  padding: var(--size-10) 0;
+}
+
+.container-full-width {
+  width: 100%;
+  /* max-width: 1200px; */
+  margin: 0 auto;
+  padding: var(--size-45) var(--size-100);
+}
+
+/* Grid System */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr); /* 12-column grid */
+  gap: 1rem; /* Spacing between grid items */
+}
+
+.grid-item {
+  padding: 0.5rem;
+  background-color: #f0f0f0; /* For demonstration purposes */
+  border: 1px solid #ddd;
+}
+
+/* Column Spans */
+.col-1 { grid-column: span 1; }
+.col-2 { grid-column: span 2; }
+.col-3 { grid-column: span 3; }
+.col-4 { grid-column: span 4; }
+.col-6 { grid-column: span 6; }
+.col-12 { grid-column: span 12; }
+
+/* Flexbox Utilities */
+.flex {
+  display: flex;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.justify-start {
+  justify-content: flex-start;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.align-start {
+  align-items: flex-start;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.align-end {
+  align-items: flex-end;
+}
+
+.align-stretch {
+  align-items: stretch;
+}
+
+.text-align-center {
+  text-align: center;
+}
+
+
+/* Grid + Flex Example Utilities */
+.flex-grid-center {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+/* Global element */
+[class^="heading--h"] {
+  font-weight: 600;
+  color: #262626;
+}
+
+[class^="paragraph--"] {
+  color: #636262;
+}
+
+.heading--h1{
+  font-size: var(--size-48);
+  line-height: var(--size-72);
+}
+
+.heading--h2{
+  font-size: var(--size-40);
+  line-height: var(--size-72);
+}
+
+.heading--h3{
+    font-size: var(--size-30);
+    line-height: var(--size-3654);
+    font-weight: 700;
+}
+
+.heading--h4{
+    font-size: var(--size-24);
+    line-height: var(--size-36);
+}
+
+.paragraph--sm {
+    font-size: var(--size-14);
+    line-height: var(--size-24);
+}
+
+.paragraph--md {
+  font-size: var(--size-16);
+  line-height: var(--size-40);
+}
+
+.paragraph--xl {
+  font-size: var(--size-20);
+  line-height: var(--size-30);
+}
+
+/* Utils */
+
+.color--primary{
+  color: var(--cl-primary-400);
+}
+
+.color--secondary{
+  color: var(--cl-secondary-400);
+}
+
+.color--white-400{
+  color: var(--clr-white-400);
+}
+
+/* Spacing */
+.margin--block-50 {
+  margin-block: clamp(1rem, 3rem, 3rem);
+}
+
+/* Spacing */
+/* .padding--inline-100 {
+  padding-inline: var(--size-100);
+}
+
+.padding--inline-120 {
+    padding-inline: var(--size-120);
+  }
+
+.padding--top-52 {
+  padding-top: var(--size-52);
+}
+
+.padding--bottom-62 {
+  padding-bottom: 6.2rem;
+}
+
+.padding--top-bottom-15 {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.padding--top-bottom-3 {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.padding--top-bottom-4 {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.padding--top-bottom-6 {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
+.padding--block-100 {
+    padding-block: var(--size-100);
+  }
+
+.padding--block-25 {
+    padding-block: var(--size-25);
+}
+
+.padding--block-12 {
+    padding-block: var(--size-12);
+}
+
+.margin--block-50 {
+    margin-block: var(--size-50);
+}
+
+.margin--block-20 {
+    margin-block: var(--size-20);
+}
+
+.margin--block-40 {
+    margin-block: var(--size-40);
+}
+
+.margin--top-10 {
+    margin-top: var(--size-50);
+}
+
+.margin--top-60 {
+    margin-top: var(--size-60);
+}
+
+.margin--top-100 {
+    margin-top: var(--size-100);
+}
+
+.margin--top-95 {
+  margin-top: var(--size-95);
+}
+
+.margin--top-40 {
+    margin-top: var(--size-40);
+}
+
+.margin--bm-10 {
+    margin-bottom: var(--size-100);
+}
+
+.margin--bm-30 {
+  margin-bottom: var(--size-30);
+} */
+
+/*
+.margin--bm-1 {
+    margin-bottom: var(--size-10);
+} */
+
+/* Gap */
+.gap--05 {
+  gap: var(--size-5);;
+}
+
+.gap--1 {
+  gap: var(--size-10);;
+}
+
+.gap--15 {
+  gap: var(--size-15);;
+}
+
+.gap--2 {
+  gap: var(--size-20);;
+}
+
+.gap--4 {
+  gap: var(--size-40);
+}
+
+.gap--6 {
+  gap: var(--size-60);
+}
+
+.gap--200 {
+    gap: var(--size-200);
+  }
+
+/* Buttons */
+.button-default {
+  font-family: roboto;
+  font-size: var(--size-16);
+  line-height: var(--size-1875);
+  font-weight: 500;
+  min-width: fit-content;
+  font-size: var(--size-14);
+  line-height: var(--size-20);
+  padding: var(--size-16) var(--size-16);
+  border-radius: var(--size-08);
+}
+
+.button-primary {
+  background-color: var(--primary-clr-400-80);
+  color: var(--clr-white-400);
+}
+
+.button-primary:hover {
+  background-color: var(--primary-clr-400-60);
+}
+
+.button-primary:pressed {
+  background-color: var(--primary-clr-400);
+}
+
+.button-secondary {
+  background-color: var(--clr-secondary-400);
+  color: var(--primary-clr-400-80);
+  border: 1px solid var(--primary-clr-400-80);
+}
+
+.button-secondary:hover {
+  background-color: var(--primary-clr-400-5);
+}
+
+.button-primary:pressed {
+  background-color: var(--primary-clr-400-20);
+}
+
+.button-trans {
+  background-color: transparent;
+  color: var(--primary-clr-400-80);
+}
+
+.button-secondary:hover {
+  background-color: var(--primary-clr-400-5);
+}
+
+.button-primary:pressed {
+  background-color: var(--primary-clr-400-20);
+}
+
+.button-round {
+  background-color: var(--primary-clr-400-80);
+  color: var(--clr-white-400);
+  border-radius: var(--size-25);
+}
