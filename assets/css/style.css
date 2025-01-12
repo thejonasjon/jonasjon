@@ -64,18 +64,11 @@
 }
 
 .mobile-nav {
-    opacity: 0;
-    transform: translateY(-100%);
-    visibility: hidden;
-    pointer-events: none;
-    transition: opacity 2s ease, transform 2s ease, visibility 2s ease;
+    display: none;
 }
 
 .mobile-nav.active {
-    opacity: 1;
-    transform: translateY(0);
-    visibility: visible;
-    pointer-events: auto;
+    display: block;
 }
 
 .hamburger {
