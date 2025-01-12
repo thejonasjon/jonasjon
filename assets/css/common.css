@@ -113,7 +113,6 @@ button {
 
 .container-full-width {
   width: 100%;
-  /* max-width: 1200px; */
   margin: 0 auto;
   padding: var(--size-45) var(--size-100);
 }
@@ -125,7 +124,6 @@ button {
 
 .grid-column-equal-2 {
   grid-template-columns: repeat(2, 1fr);
-  border: 1px solid red;
 }
 
 .grid-item {
@@ -274,6 +272,7 @@ button {
 .margin--block-50 {
   margin-block: clamp(1rem, 3rem, 3rem);
 }
+
 
 /* Spacing */
 /* .padding--inline-100 {
@@ -437,27 +436,57 @@ button {
   font-size: var(--size-14);
   line-height: var(--size-20);
   padding: var(--size-16) var(--size-20);
+  transition: color 0.3s ease-in-out, transform 0.3s ease;
+
+}
+
+.button-text:hover {
+  color: #ffffff;
+  filter: brightness(1.5);
+  transform: scale(1.1);
+  font-weight: 500;
+}
+
+.button-text svg {
+  animation: arrow-bounce 1.5s infinite ease-in-out;
+}
+
+@keyframes arrow-bounce {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(10px);
+  }
 }
 
 .button-round--60 {
   border-radius: var(--size-60);
 }
 
+/* Base Button Styling */
 .button-primary {
-  background-color: var(--clr-white-400);
+  background: linear-gradient(90deg, #131010 50%, var(--clr-white-400) 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
   color: var(--clr-black-300);
+  overflow: hidden;
+  transition: background-position 0.4s ease-in-out, color 0.4s ease-in-out, transform 0.5s ease-in-out;
 }
+
+.button-primary:hover {
+  background-position: left bottom;
+  color: var(--clr-white-400);
+  transform: scale(1.1, 1.18);
+  border: 0.2px solid rgb(55, 55, 55);
+}
+
 
 .button-outline--dark {
   background-color: transparent;
   border: 0.1px solid #131313;
   color: #dfdfdf;
   padding: var(--size-12) var(--size-24);
-}
-
-
-.button-primary:hover {
-
 }
 
 .button-primary:pressed {
@@ -504,4 +533,12 @@ button {
   font-size: var(--size-12);
   line-height: var(--size-20);
   color: #909090;
+}
+
+main > *:not(:last-child) {
+  margin-bottom: max(10rem, 5rem);
+}
+
+main > *:first-child {
+  margin-top: max(10rem, 5rem);
 }
