@@ -287,86 +287,9 @@
                 padding: 0;
                 margin: 0;
             }
-
         }
-
-
     }
-
 }
-
-
-
-/* About me */
-/* .about {
-    position: relative;
-    height: 100vh;
-    overflow: hidden;
-}
-
-.about .grid {
-    grid-template-columns: 1fr 2fr;
-}
-
-
-.about .heading--h4 {
-    color: #bababa;
-}
-
-.about .section-title .heading--h4 {
-    color: #e1e1e1;
-}
-
-.about .heading--h3 {
-    color: #bababa;
-}
-
-.image-container {
-    width: 250px;
-    height: 250px;
-}
-
-.image-container img {
-    width: 100%;
-    height: 100%;
-}
-
-.about .vertical {
-    background-color: #bababa;
-    width: var(--size-5);
-    min-height: 60vh;
-}
-
-.about .card h4::before {
-    content: "";
-    background-color: rgb(232, 232, 232);
-    width: max(var(--size-10));
-    height: max(var(--size-10));
-    display: inline-block;
-    margin-right: var(--size-20);
-    vertical-align: middle;
-    margin-left: -4.6rem;
-    border-radius: 50%;
-}
-
-.about .card .heading--h4{
-    padding-block: 0 1.2rem;
-    line-height: 0;
-}
-
-.about .paragraph--sm {
-    margin-block: max(var(--size-5)) 0;
-}
-
-.about .tools {
-    margin-block: max(var(--size-20));
-}
-
-.about .btn-wrapper {
-    margin-left: var(--size-20);
-    margin-block: var(--size-60) 0;
-} */
-
 
 /* Projects */
 .container-slide-text.flex .text{
@@ -511,7 +434,7 @@
 
 /* Technology */
 .technology {
-
+    padding-block: max(var(--size-40));
     & ul {
         display: flex;
         gap: 4rem;
@@ -522,6 +445,7 @@
         width: 50px;
         height: 50px;
     }
+
 }
 
 
@@ -595,6 +519,7 @@ footer {
 
 .input-group textarea{
     min-height: 10px;
+
 }
 
 .footer-form {
@@ -818,6 +743,7 @@ footer {
 
     .mobile-nav {
         position: relative;
+        z-index: 1;
         flex-direction: column;
         gap: 10rem;
         width: 100%;
