@@ -125,11 +125,13 @@
 }
 
 .header .heading-text p{
+    max-width: clamp(10rem, 80rem, 100%);
     font-size: var(--size-12);
     line-height: var(--size-26);
     color: #bababa;
     width: fit-content;
     text-align: left;
+    margin: 0 auto;
 }
 
 .header .profile-text p{
@@ -149,6 +151,15 @@
     color: #909090;
     padding:  var(--size-2) var(--size-5);
     border: 1px solid rgb(18, 18, 18);
+}
+
+.tool-see-more {
+    color: #0758c3;
+}
+
+.tool-see-more:hover {
+    text-decoration: underline;
+    color: #06418e;
 }
 
 .tools-social {
@@ -410,12 +421,11 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(
+            background-image: linear-gradient(
                 to top,
-                rgba(84, 72, 72, 0.5) 30%,
-                rgba(84, 72, 72, 0.2) 40%
-            );
-            border-radius: 16px;
+                rgb(5, 25, 55, 0.5) 40%,
+                rgb(0, 30, 46, 0.4) 60%);
+            border-radius: var(--size-10);
             box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
             backdrop-filter: blur(0px);
             -webkit-backdrop-filter: blur(0px);
@@ -431,8 +441,8 @@
             cursor: pointer;
             transform: translateY(0);
             opacity: 1;
-            backdrop-filter: blur(0.1px);
-            -webkit-backdrop-filter: blur(0.1px);
+            backdrop-filter: blur(0.2px);
+            -webkit-backdrop-filter: blur(0.2px);
             box-shadow: 0 6px 40px rgba(0, 0, 0, 0.1);
             filter: brightness(1.2);
         }
@@ -457,7 +467,7 @@
             position: absolute;
             bottom: max(var(--size-20));
             left: var(--size-25);
-            color: white;
+            color: var(--clr-white-400);
             opacity: 0;
             z-index: 2;
             transform: translateY(20px);
@@ -474,7 +484,7 @@
                 width: 60%;
                 font-size: var(--size-12);
                 font-weight: 400;
-                color: #d0d0d0;
+                color: rgb(221, 221, 221);
                 text-wrap: pretty;
             }
 
@@ -544,6 +554,7 @@ footer {
 
         &:hover {
             text-decoration: underline;
+            filter: brightness(1.1);
         }
     }
 
@@ -607,10 +618,7 @@ footer {
     }
 }
 
-
 /* Tablet Devices (481px to 768px) */
-
-
 @media (max-width: 990px) and (min-width: 481px) {
     .container-header {
         & .desktop {
