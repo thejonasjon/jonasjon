@@ -8,6 +8,7 @@
 
 .header {
     min-height: 100vh;
+    margin-bottom: clamp(3rem, 10vw, 10rem);
 
     & .heading-text .btn-wrapper {
         margin-top: clamp(0.4rem, 8rem, 10rem);
@@ -96,6 +97,7 @@
     width: 80px;
     height: 80px;
     border-radius: 50%;
+    border: 0.6px solid rgb(233, 232, 232);
 }
 
 .header .profile-img img{
@@ -216,6 +218,7 @@
     display: block;
     min-height: 100vh;
     width: 100%;
+    margin-bottom: clamp(2rem, 2vw, 3rem);
 
     & .container-content {
         padding: var(--size-60);
@@ -223,21 +226,31 @@
 
     & .text-image {
         padding-inline: 10rem;
+        padding: clamp(2rem,5vw, 5rem) clamp(2rem, 10vw, 10rem);
+        gap: clamp(2rem, 5vw, 5rem);
         justify-content: center;
         align-items: center;
-        position: relative;
+        /* position: relative; */
         border-radius: var(--size-20);
         border: 1px solid rgb(53, 53, 53);
 
-        &.grid {
-            padding: 5rem;
+        & .texts {
+            gap: clamp(2rem, 5vw, 5rem);
+            & > * {
+                flex: 1 1;
+                min-width: 30rem;
+            }
         }
 
+        /* &.grid {
+            padding: 5rem;
+        } */
+
         & .section-heading {
-            position: absolute;
+            /* position: absolute;
             left: 30%;
             top: 10%;
-            z-index: 5;
+            z-index: 5; */
         }
 
         & .image {
@@ -246,7 +259,7 @@
             border-radius: var(--size-5);
             position: relative;
 
-            &::after {
+            /* &::after {
                 content: " ";
                 position: absolute;
                 top: 0;
@@ -256,13 +269,12 @@
                 height: 100%;
                 z-index: 1;
 
-                /* From https://css.glass */
                 background: rgba(22, 20, 20, 0.07);
                 border-radius: 16px;
                 box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
                 backdrop-filter: blur(1.1px);
                 -webkit-backdrop-filter: blur(1.1px);
-            }
+            } */
 
             & img {
                 width: 100%;
@@ -271,7 +283,12 @@
             }
         }
 
-        & .section-heading h1 {
+        & .section-heading .heading--h1 {
+            font-size: var(--size-80);
+            line-height: var(--size-72);
+        }
+
+        & .texts .image .heading--h1 {
             font-size: var(--size-80);
             line-height: var(--size-72);
         }
@@ -300,6 +317,8 @@
     min-height: auto;
     padding: var(--size-40) 5%;
     overflow: hidden;
+    margin-bottom: clamp(3rem, 10vw, 10rem);
+
 
     .container-content {
         padding-inline: max(12rem, var(--size-40));
@@ -321,7 +340,8 @@
     }
 
     & .project-lists > * {
-        flex: 1 1 max(400px);
+        /* flex: 1 1 max(400px); */
+        flex: 1 1 calc(100% / 2 - 20px);
         max-height: 35rem;
     }
 
@@ -622,12 +642,12 @@ footer {
     .about {
 
         & .text-image {
-            & .section-heading {
+            /* & .section-heading {
                 position: relative;
                 display: block;
                 left: 0;
                 top: 0;
-            }
+            } */
         }
 
         & .text-image.grid {
@@ -831,7 +851,7 @@ footer {
 
         & .text-image {
             & .section-heading {
-                position: relative;
+                /* position: relative; */
                 display: block;
                 left: 0;
                 top: 0;

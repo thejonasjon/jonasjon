@@ -129,29 +129,40 @@
                 <p>| About</p>
             </div>
 
-            <div class="text-image grid grid-column-equal-2">
+            <div class="text-image flex flex-column">
                 <div class="section-heading">
                     <h1 class="heading--h1">About Me.</h1>
                 </div>
 
-                <div class="image">
-                    <img src="/assets/images/jonas.JPG" alt="Jonas Image">
-                </div>
+                <div class="texts flex justify-center align-center flex-wrap">
+                    <div class="image">
+                        <!-- <img src="/assets/images/jonas.JPG" alt="Jonas Image"> -->
 
-                <div class="text flex-column">
-                    <div>
-                        <p class="paragraph--sm">
-                            I am driven by the desire to build innovative, high-quality products that not only meet user expectations but also exceed them. I am committed to supporting my peers and continuously developing my skills in order to contribute meaningfully to the tech community.                        </p>
-                        <br><br>
-                        <p class="paragraph--sm">
-                            Whether you are looking for a passionate frontend developer, someone who prioritizes product quality and user experience, or a collaborator who thrives in diverse team settings, let’s connect and make great things happen.                        </p>
+                        <h2 class="heading--h2">
+                            I Don't Just Code –
+                        </h2>
+                        <h2 class="heading--h2">
+                            I Build Experiences That Engage
+                        </h2>
                     </div>
 
-                    <div class="btn-wrapper flex justify-center">
-                        <a class="button-text flex align-center gap--2" href="#project">
-                            My Projects
-                            <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path fill="#eee" d="M21.883 12l-7.527 6.235.644.765 9-7.521-9-7.479-.645.764 7.529 6.236h-21.884v1h21.883z"></path></svg>
-                        </a>
+                    <div class="text flex-column">
+                        <div>
+                            <p class="paragraph--sm">
+                                I am passionate about building innovative, high-quality digital experiences that not only meet but exceed user expectations. With a keen eye for detail and a commitment to excellence, I continuously refine my skills to create impactful solutions and support the tech community.
+                            </p>
+                            <br><br>
+                            <p class="paragraph--sm">
+                                Whether you need a frontend developer dedicated to user experience, a quality-focused engineer, or a collaborative team player, let’s connect and turn ideas into reality.
+                            </p>
+                        </div>
+
+                        <div class="btn-wrapper flex justify-center">
+                            <a class="button-text flex align-center gap--2" href="#project">
+                                My Projects
+                                <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path fill="#eee" d="M21.883 12l-7.527 6.235.644.765 9-7.521-9-7.479-.645.764 7.529 6.236h-21.884v1h21.883z"></path></svg>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -170,6 +181,28 @@
             </div>
 
             <div class="project-lists flex flex-wrap gap--2">
+                <div class="project-card">
+                    <a href="https://easyhome-app.netlify.app/">
+                    <div class="clips">
+                        <img src="/assets/images/easyhome.gif" alt="EasyHome">
+                    </div>
+
+                    <div class="text flex-column">
+                        <h4>EasyHome</h4>
+                        <p>EasyHome is a smart platform that makes house hunting simple, secure, and accessible. It offers verified listings, 3D property views, and virtual tours, helping users explore homes before visiting. With secure messaging, real-time availability, and safe online payments, EasyHome ensures a smooth and trustworthy rental experience.</p>
+                        <div class="tools">
+                            <ul role="list" class=" flex flex-wrap gap--1">
+                                <li>HTML</li>
+                                <li>CSS</li>
+                                <li>JavaScript</li>
+                                <li>Netlify</li>
+                                <li>Github</li>
+                            </ul>
+                        </div>
+                    </div>
+                    </a>
+                </div>
+
                 <div class="project-card">
                     <a href="https://todo-9b.netlify.app/">
                     <div class="clips">
@@ -200,7 +233,7 @@
                     </div>
 
                     <div class="text flex-column">
-                        <h4>Guss Game</h4>
+                        <h4>Guess Game</h4>
                         <p>This is a simple number-guessing game where the player tries to guess a randomly generated number between 1 and 20. The game provides feedback on whether the guess is correct or wrong, with a score decreasing after each incorrect guess. When the player guesses correctly, the background changes color, and the high score is updated.</p>
 
                         <div class="tools">
@@ -282,7 +315,7 @@
                     </div>
                     </a>
                 </div>
-
+<!--
                 <div class="project-card">
                     <a href="https://petoga.netlify.app/">
                     <div class="clips">
@@ -304,7 +337,7 @@
                         </div>
                     </div>
                     </a>
-                </div>
+                </div> -->
 
             </div>
 
@@ -448,7 +481,7 @@
                             </div>
 
                             <div class="btn-wrapper">
-                                <button class="button-default button-round--60 button-primary">Send me a message </button>
+                                <button class="button-default button-round--60 button-primary">Send email </button>
                             </div>
                         </form>
                     </div>

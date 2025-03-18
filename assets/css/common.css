@@ -420,11 +420,3 @@ button {
   line-height: var(--size-20);
   color: #909090;
 }
-
-main > *:not(:last-child) {
-  margin-bottom: max(10rem, 5rem);
-}
-
-main > *:first-child {
-  margin-top: max(10rem, 5rem);
-}
