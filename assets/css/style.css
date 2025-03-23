@@ -3,7 +3,7 @@
 
 /* 1A1A1D */
 .container-content, .container-header{
-    padding-inline: var(--size-40);
+    padding-inline: clamp(1rem, 3vw, 4rem);
 }
 
 .header {
@@ -221,12 +221,12 @@
     margin-bottom: clamp(2rem, 2vw, 3rem);
 
     & .container-content {
-        padding: var(--size-60);
+        padding: clamp(1rem, 5vw, 6rem);
     }
 
     & .text-image {
         padding-inline: 10rem;
-        padding: clamp(2rem,5vw, 5rem) clamp(2rem, 10vw, 10rem);
+        padding: clamp(2rem, 5vw, 5rem) clamp(2rem, 10vw, 10rem);
         gap: clamp(2rem, 5vw, 5rem);
         justify-content: center;
         align-items: center;
@@ -315,13 +315,13 @@
 
 .projects {
     min-height: auto;
-    padding: var(--size-40) 5%;
+    padding: clamp(0.5rem, 4vw, 4rem) 5%;
     overflow: hidden;
     margin-bottom: clamp(3rem, 10vw, 10rem);
 
 
     .container-content {
-        padding-inline: max(12rem, var(--size-40));
+        padding-inline: clamp(1rem, 5vw, 10rem);
 
         & .section-title {
             margin-block: 0 var(--size-26)
@@ -408,8 +408,8 @@
         & .text {
             width: 100%;
             position: absolute;
-            bottom: max(var(--size-20));
-            left: var(--size-25);
+            bottom: clamp(0.2rem, 2vw, 2rem);
+            left: clamp(0.8rem, 2vw, 2.5rem);
             color: var(--clr-white-400);
             opacity: 0;
             z-index: 2;
@@ -946,4 +946,42 @@ footer {
             gap: 2rem;
         }
     }
+}
+
+
+@media (max-width: 1024px) {
+    .projects {
+        & .project-lists > * {
+            /* flex: 1 1 max(400px); */
+            flex: 1 1 calc(100% / 2 - 20px);
+            max-height: 35rem;
+            min-width: 20rem;
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    .projects {
+        & .project-lists > * {
+            /* flex: 1 1 max(400px); */
+            flex: 1 1 calc(100% / 1 - 20px);
+            max-height: 35rem;
+            min-width: 20rem;
+        }
+    }
+}
+
+@media (max-width: 330px) {
+
+    .about {
+        & .text-image {
+            & .texts {
+                & > * {
+                    flex: 1 1;
+                    min-width: unset;
+                }
+            }
+        }
+    }
+
 }

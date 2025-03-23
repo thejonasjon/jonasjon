@@ -42,12 +42,17 @@
 }
 
 .projects  .project-lists {
-    height: unset;
+    /* height: unset;
     overflow: unset;
     overflow-y: unset;
-    padding-block: unset;
+    padding-block: unset; */
 }
 
 .projects .section-number {
 }
 
+@media (max-width: 663px) {
+
+
+
+}
