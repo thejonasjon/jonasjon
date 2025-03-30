@@ -2,7 +2,7 @@ import '../css/style.css'
 import { Button } from '../components/button'
 import HeroAnimation from './hero-animation';
 import { Link } from 'react-router-dom';
-import { ArrowDownIcon, ArrowDown, ExternalLink } from "lucide-react"
+import { ArrowDownIcon, ArrowDown, ExternalLink, Briefcase } from "lucide-react"
 
 
 import { useEffect, useState, useRef } from 'react';
@@ -38,30 +38,38 @@ function Hero(){
             <div className="absolute inset-0 -z-10">
                 <HeroAnimation />
             </div>
-            <div className="flex flex-col justify-between px-20 pt-32" style={{height: "90vh"}} >
-                <div ref={ref} className='flex flex-col justify-center gap-6'>
+            <div className="flex flex-col justify-between gap-3 px-8 md:px-20 pt-40 sm:pt-36 md:pt-20" style={{height: "90vh"}} > {/*pt-10 sm:pt-40 md:pt-24 lg:pt-32 */}
+                <div ref={ref} className='flex flex-col justify-center gap-3 md:gap-6'>
                     <div className=''>
-                        <span className='text-xs font-medium text-gray-700 py-2 px-4 rounded-full border border-gray-200'>Available for work</span>
+                        <span className='text-xs font-normal sm:font-medium text-gray-700 py-2 px-4 rounded-full border border-gray-200'>Available for work</span>
                     </div>
 
-                    <div className='w-full flex flex-col gap-10'>
-                        <div className='flex flex-col gap-5'>
-                            <motion.h1 initial={{ color: "#aaa"}} animate={{ color: textColor}} transition={{ duration: 0.5 }} className="text-6xl font-bold leading-8 mb-2"> Jonas John</motion.h1>
-                            <motion.h1 initial={{ color: "#aaa"}} animate={{ color: textColor}} transition={{ duration: 0.5 }} className='text-6xl font-bold leading-8'>Frontend Developer</motion.h1>
+                    <div className='w-full flex flex-col gap-4 md:gap-10'>
+                        <div className='flex flex-col gap-2 sm:gap-5 md:gap-2'>
+                            <motion.h1 initial={{ color: "#aaa"}} animate={{ color: textColor}} transition={{ duration: 0.5 }} className="text-4xl sm:text-5xl md:text-6xl font-bold leading-[1.1]"> Jonas John</motion.h1>
+                            <motion.h1 initial={{ color: "#aaa"}} animate={{ color: textColor}} transition={{ duration: 0.5 }} className='text-4xl sm:text-5xl  md:text-6xl font-bold leading-[1.1]'>Frontend Developer</motion.h1>
                         </div>
 
-                        <div className='flex gap-16 w-full'>
-                            <div>
-                                <p className='text-2xl text-gray-500'>I build robust, well-tested applications with a focus on code quality and performance. Specialized in full-stack development and quality assurance.</p>
+                        <div className='flex gap-0 sm:gap-16 md:gap-8 w-full'>
+                            <div className='flex flex-col gap-10 sm:gap-14 md:gap-18'>
+                                <div>
+                                    <p className='text-xl sm:text-2xl text-gray-500'>I build robust, well-tested applications with a focus on code quality and performance. Specialized in full-stack development and quality assurance.</p>
+                                </div>
+
+                                <div className='flex gap-2 lg:gap-4 flex-wrap lg:flex-nowrap'>
+                                    <Button className="bg-black hover:bg-gray-700 text-sm md:text-base text-gray-50 rounded" name="View Projects" Icon={svgRightLong} />
+                                    <Button className="bg-white hover:bg-gray-100 text-sm md:text-base text-gray-900 border border-gray-300 hover:border-gray-200 rounded" name="Download Resume" Icon={svgDownload} leftIcon={true} />
+                                </div>
                             </div>
 
-                            <div className='bg-gray-50 p-8 border rounded-xl border-gray-200'>
-                                <h5 className='text-lg font-medium mb-2'>Current Open Source Project</h5>
-                                <p className='text-md font-normal text-gray-500'>Contributing to an Outreachy open-source project to enhance testability and simplify developer workflows.</p>
+
+                            <div className='hidden md:block bg-gray-50 p-8 border rounded-xl border-gray-200'>
+                                <h5 className='text-base font-normal mb-2'><span className=''>Currently:</span> <span className='text-lg font-medium'>Frontend Developer</span> at <a className='text-xl font-medium text-[#4566ac] hover:underline' href="handigo.ltdhttps://handigo-app.netlify.app/">Handigo</a></h5>
+                                <p className='text-md font-normal text-gray-500'>Building Products That Redefine Access to Craftsmanship – A Seamless, Secure, and Trusted Digital Solution Empowering Working Class to Focus on What Truly Matters!</p>
 
                                 <div className="btn-cont mt-4 w-max self-end items-end">
                                     <Link className='flex items-center gap-3 text-sm font-medium border rounded border-gray-200 px-5 py-3 hover:border-gray-50 hover:rounded-md hover:bg-gray-100 cursor-pointer'>
-                                        View project details
+                                        View product details
                                         <ExternalLink color="#292929" width={18} height={18} strokeWidth={1.5} />
                                     </Link>
                                 </div>
@@ -71,28 +79,17 @@ function Hero(){
                     </div>
                 </div>
 
-                <div className='flex gap-4'>
-                    <Button className="bg-black hover:bg-gray-700 text-base text-gray-50 rounded" name="View Projects" Icon={svgRightLong} />
-                    <Button className="bg-white hover:bg-gray-100 text-base text-gray-900 border border-gray-300 hover:border-gray-200 rounded" name="Download Resume" Icon={svgDownload} leftIcon={true} />
-                </div>
-
-                <div className='flex items-center gap-4'>
+                <div className='flex items-center flex-wrap sm:flex-nowrap gap-2 md:gap-4'>
                     <div className='flex items-center gap-2'>
-                    <svg xmlns="http://www.w3.org/2000/svg" width={20} height={20} viewBox="0 0 256 256">
-                        <path fill="#000" d="M216 58h-42V48a22 22 0 0 0-22-22h-48a22 22 0 0 0-22 22v10H40a14 14 0 0 0-14 14v128a14 14 0 0 0 14 14h176a14 14 0 0 0 14-14V72a14 14 0 0 0-14-14M94 48a10 10 0 0 1 10-10h48a10 10 0 0 1 10 10v10H94Zm68 22v132H94V70ZM38 200V72a2 2 0 0 1 2-2h42v132H40a2 2 0 0 1-2-2m180 0a2 2 0 0 1-2 2h-42V70h42a2 2 0 0 1 2 2Z" strokeWidth={3.5} stroke="#575757"></path>
-                    </svg>
-                        <p className='text-sm font-semibold text-gray-800'>Previously at</p>
+                        <Briefcase strokeWidth={1.5} stroke="#575757" width={20} height={20} />
+                        <p className='text-xs sm:text-sm font-medium sm:font-semibold text-gray-800'>Previously at:</p>
                     </div>
-                    <ul className='flex items-center gap-2'>
-                        <li className='text-xs font-semibold text-gray-700 hover:text-gray-800 py-0 px-3 rounded-full border border-gray-200 hover:border-gray-300 bg-white cursor-pointer'>
-                            <a href="#">Tunga</a>
-                        </li>
-                        <li className='text-xs font-semibold text-gray-700 hover:text-gray-800 py-0 px-3 rounded-full border border-gray-200 hover:border-gray-300 bg-white cursor-pointer'>
-                            <a href="#">NIBSS</a>
-                        </li>
-                        <li className='text-xs font-semibold text-gray-700 hover:text-gray-800 py-0 px-3 rounded-full border border-gray-200 hover:border-gray-300 bg-white cursor-pointer'>
-                            <a href="#">Google</a>
-                        </li>
+                    <ul className='flex items-center gap-1'>
+                        {["Tunga", "NIBSS", "Townsmeet"].map((skill) => (
+                            <li className='text-xs font-medium md:font-semibold text-gray-700 hover:text-gray-800 py-0 px-3 rounded-full border border-gray-200 hover:border-gray-300 bg-white cursor-pointer'>
+                                <a href="#">{skill}</a>
+                            </li>
+                        ))}
                         {/* <li className='text-xs font-medium text-grey-800 py-1 px-3 rounded-full border border-gray-200 bg-gray-100'>More</li> */}
                     </ul>
                 </div>

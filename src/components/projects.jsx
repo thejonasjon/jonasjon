@@ -5,11 +5,11 @@ import { ArrowBigUp, ArrowUp, ArrowUp01, ArrowUpRight } from "lucide-react";
 
 function Projects() {
     return (
-        <section className="relative">
-            <div className="px-10 py-20 h-full w-full bg-[radial-gradient(ellipse_at_center,_#111827_0%,_#030712_50%,_black_100%)]">
+        <section id="projects" className="relative">
+            <div className="px-8 md:px-10 py-20 h-full w-full bg-[radial-gradient(ellipse_at_center,_#111827_0%,_#030712_50%,_black_100%)]">
                 <div className="heading mb-32">
-                    <h2 className="text-6xl text-white font-bold mb-3">Projects</h2>
-                    <p className="text-xl font-normal text-gray-300 w-3/6">
+                    <h2 className="text-4xl md:text-6xl text-white font-bold mb-3">Projects</h2>
+                    <p className="text-lg sm:text-xl font-normal text-gray-300 w-full sm:w-4/6 md:w-3/6">
                         Exploring the boundaries of digital experience through innovative projects that challenge conventional paradigms.
                     </p>
                 </div>
@@ -47,7 +47,7 @@ function Projects() {
                     ))}
                 </div>
 
-                <div className="flex justify-center mt-30">
+                <div className="flex justify-center mt-10 sm:mt-30">
                     <motion.button
                     whileHover={{scaleX: 1.06}}
                     transition={{duration:0.5, ease: "easeInOut"}}

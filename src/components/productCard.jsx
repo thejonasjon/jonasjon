@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { delay, hover, motion } from "framer-motion";
 import projectImage from '../assets/images/project.jpeg'
 
@@ -7,13 +7,26 @@ import { ArrowUpRight, Github, X, Plus, Maximize, Minimize, Sparkles } from "luc
 
 
 function ProductCard({productDetails}){
-    const [hovered, setHovered] = useState(false);
-
     const [isOpen, setIsOpen] = useState(false);
+    const modalRef = useRef(null);
 
     const toggleDetails = () => {
         setIsOpen(!isOpen);
     };
+
+    useEffect(() => {
+        if (isOpen) {
+            document.body.classList.add("overflow-hidden");
+
+            setTimeout(() => {
+                modalRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+            }, 50);
+        } else {
+            document.body.classList.remove("overflow-hidden");
+        }
+
+        return () => document.body.classList.remove("overflow-hidden");
+    }, [isOpen]);
 
     const cardVariants = {
         hidden: {
@@ -42,12 +55,12 @@ function ProductCard({productDetails}){
             <motion.div className="child-card relative rounded-lg p-6 bg-gradient-to-br from-gray-500 via-gray-600 to-gray-800">
                 <div className="flex items-center gap-2 mb-3">
                     <span className="rounded-bullet h-2 w-2 rounded-full bg-amber-500"></span>
-                    <span className="text-sm text-gray-300 block">{productDetails.name}</span>
+                    <span className="text-xs sm:text-sm text-gray-300 block">{productDetails.name}</span>
                 </div>
 
                 <div>
-                    <h3 className="text-xl text-gray-100 md:text-2xl font-bold ">{productDetails.name}</h3>
-                    <h4 className="text-xl text-gray-300 mb-3">{productDetails.subname}</h4>
+                    <h3 className="text-lg sm:text-xl text-gray-100 md:text-2xl font-bold ">{productDetails.name}</h3>
+                    <h4 className="text-lg sm:text-xl text-gray-300 mb-3">{productDetails.subname}</h4>
                 </div>
 
                 <div className="flex flex-wrap gap-1 mb-6">
@@ -77,7 +90,7 @@ function ProductCard({productDetails}){
 
             {
                 isOpen && (
-                    <div className="w-full h-screen flex absolute text-white left-0 top-8 bg-gray-900">
+                    <div ref={modalRef} className="w-full h-screen flex absolute z-10 text-white left-0 top-8 bg-[rgba(16,24,40,0.8)] ">
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-0 w-11/12 h-5/6 rounded-2xl m-auto justify-cente">
                                 <div className="relative rounded-l-2xl flex-1">
                                     <img className='w-full h-full rounded-t-2xl md:rounded-l-2xl md:rounded-none' src={projectImage} alt="" />

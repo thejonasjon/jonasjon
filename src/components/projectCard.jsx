@@ -33,9 +33,9 @@ function ProjectCard({ title, description, skills = [], href = []}){
 
 
                 <div className="heading">
-                    <h3 className="text-4xl font-bold bg-gradient-to-br from-purple-500/80 to-pink-500/90 bg-clip-text text-transparent mb-2">{title}</h3>
-                    <h4 className="text-xl font-normal text-gray-400 mb-6">{title}</h4>
-                    <p className="text-xl font-normal text-gray-400 mb-10">{description}</p>
+                    <h3 className="text-3xl sm:text-4xl font-bold bg-gradient-to-br from-purple-500/80 to-pink-500/90 bg-clip-text text-transparent mb-2">{title}</h3>
+                    <h4 className="text-lg sm:text-xl font-normal text-gray-400 mb-4 sm:mb-6">{title}</h4>
+                    <p className="text-lg sm:text-xl font-normal text-gray-400 mb-8 sm:mb-10">{description}</p>
                 </div>
 
                 <div className="skills flex items-center flex-wrap gap-2 mt-3">
@@ -46,12 +46,12 @@ function ProjectCard({ title, description, skills = [], href = []}){
                     }
                 </div>
 
-                <div className="btn-cnt flex gap-8 mt-8">
-                    <motion.a href="" className="flex items-center gap-3 text-md font-medium text-gray-400 hover:text-gray-200 cursor-pointer"
+                <div className="btn-cnt flex flex-wrap gap-3 sm:gap-8 mt-8">
+                    <motion.a href="" className="flex items-center gap-3 py-2 text-md font-medium text-gray-400 hover:text-gray-200 cursor-pointer"
                         whileHover={{ scaleX: 1.07 }}
                         transition={{ duration: 0.3 }}
 
-                        style={{ transformOrigin: "left" }}
+                        style={{ transformOrigin: "left"}}
                         >
                         Explore Project
                         <motion.span
@@ -63,7 +63,7 @@ function ProjectCard({ title, description, skills = [], href = []}){
                         </motion.span>
                     </motion.a>
 
-                    <motion.a href="" className="flex items-center gap-3 text-md font-medium text-gray-400 hover:text-gray-200 cursor-pointer"
+                    <motion.a href="" className="flex items-center gap-3 py-2 text-md font-medium text-gray-400 hover:text-gray-200 cursor-pointer"
                         whileHover={{scaleX: 1.07}}
                         transition={{duration:0.3}}
                         style={{ transformOrigin: "right"}}

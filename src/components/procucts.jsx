@@ -23,11 +23,11 @@ function Products(){
     console.log(productDetails)
 
     return (
-        <section className="relative">
+        <section id="experience" className="relative">
             <div className="px-10 py-20 h-full w-full bg-[linear-gradient(to_right,_#414345,_#232526)]">
                 <div className="heading mb-32">
-                    <h2 className='text-6xl text-white font-bold mb-3'>Product Products</h2>
-                    <p className="text-xl font-normal text-gray-300 w-3/6">Exploring the boundaries of digital experience through innovative projects that challenge conventional paradigms..</p>
+                    <h2 className='text-4xl md:text-6xl text-white font-bold mb-3'>Product Products</h2>
+                    <p className="text-lg sm:text-xl font-normal text-gray-300 w-full sm:w-4/6 md:w-3/6">Exploring the boundaries of digital experience through innovative projects that challenge conventional paradigms..</p>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
