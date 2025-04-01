@@ -57,8 +57,12 @@ function Hero(){
                                 </div>
 
                                 <div className='flex gap-2 lg:gap-4 flex-wrap lg:flex-nowrap'>
-                                    <Button className="bg-black hover:bg-gray-700 text-sm md:text-base text-gray-50 rounded" name="View Projects" Icon={svgRightLong} />
-                                    <Button className="bg-white hover:bg-gray-100 text-sm md:text-base text-gray-900 border border-gray-300 hover:border-gray-200 rounded" name="Download Resume" Icon={svgDownload} leftIcon={true} />
+                                    <a href="#projects">
+                                        <Button className="bg-black hover:bg-gray-700 text-sm md:text-base text-gray-50 rounded" name="View Projects" Icon={svgRightLong} />
+                                    </a>
+                                    <a href="https://docs.google.com/document/d/1UGwJSQjKwLLkFxHXKLjgfdug1zvwsB9qGfvW0gkrbL8/export?format=pdf" target="_blank">
+                                        <Button className="bg-white hover:bg-gray-100 text-sm md:text-base text-gray-900 border border-gray-300 hover:border-gray-200 rounded" name="Download Resume" Icon={svgDownload} leftIcon={true} />
+                                    </a>
                                 </div>
                             </div>
 
@@ -68,10 +72,10 @@ function Hero(){
                                 <p className='text-md font-normal text-gray-500'>Building Products That Redefine Access to Craftsmanship – A Seamless, Secure, and Trusted Digital Solution Empowering Working Class to Focus on What Truly Matters!</p>
 
                                 <div className="btn-cont mt-4 w-max self-end items-end">
-                                    <Link className='flex items-center gap-3 text-sm font-medium border rounded border-gray-200 px-5 py-3 hover:border-gray-50 hover:rounded-md hover:bg-gray-100 cursor-pointer'>
+                                    <a href='#experience' className='flex items-center gap-3 text-sm font-medium border rounded border-gray-200 px-5 py-3 hover:border-gray-50 hover:rounded-md hover:bg-gray-100 cursor-pointer'>
                                         View product details
                                         <ExternalLink color="#292929" width={18} height={18} strokeWidth={1.5} />
-                                    </Link>
+                                    </a>
                                 </div>
                             </div>
                         </div>

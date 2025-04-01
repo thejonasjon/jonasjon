@@ -48,32 +48,34 @@ function ProductCard({productDetails}){
     }
 
     return (
-        <motion.div className="parent-card border p-10 rounded-xl cursor-pointer" style={{ background: "linear-gradient(45deg, #FFFDFF 40%, #F9FEFF 79%, #FFFDFF 100%)" }}
+        <motion.div className="parent-card border p-10 rounded-xl cursor-pointer bg-gradient-to-br from-gray-500 via-gray-600 to-gray-800"
         variants={cardVariants}
         onClick={toggleDetails}
         >
-            <motion.div className="child-card relative rounded-lg p-6 bg-gradient-to-br from-gray-500 via-gray-600 to-gray-800">
+
+            <motion.div className="child-card relative rounded-lg p-6 " style={{ background: "linear-gradient(45deg, #FFFDFF 40%, #F9FEFF 79%, #FFFDFF 100%)" }}>
                 <div className="flex items-center gap-2 mb-3">
                     <span className="rounded-bullet h-2 w-2 rounded-full bg-amber-500"></span>
-                    <span className="text-xs sm:text-sm text-gray-300 block">{productDetails.name}</span>
+                    <span className="text-md md:text-lg font-medium text-gray-800 block">{productDetails.category.join(", ")}</span>
                 </div>
 
                 <div>
-                    <h3 className="text-lg sm:text-xl text-gray-100 md:text-2xl font-bold ">{productDetails.name}</h3>
-                    <h4 className="text-lg sm:text-xl text-gray-300 mb-3">{productDetails.subname}</h4>
+                    <h3 className="text-lg sm:text-xl text-gray-600 md:text-2xl font-bold mb-1">{productDetails.name}</h3>
+                    <h4 className="text-base md:text-lg text-gray-900 mb-3">{productDetails.subname}</h4>
                 </div>
 
                 <div className="flex flex-wrap gap-1 mb-6">
                     {
                         productDetails.technologies.length > 0 && (
                             productDetails.technologies.slice(0, 3).map((technology, index) => (
-                                <span key={index} className="px-3 py-1 rounded-full text-sm text-gray-100 font-normal bg-white/5 border border-white/10 backdrop-blur-sm">{technology}</span>
+                                <span key={index} className="px-3 py-1 rounded-full text-sm text-gray-800 font-normal bg-black/5 border border-black/5 backdrop-blur-sm">{technology}</span>
                             ))
                         )
+
                     }
                     {
                         productDetails.technologies.length > 0 && (
-                            <span className="px-3 py-1 rounded-full text-sm text-gray-100 font-normal bg-white/5 border border-white/10 backdrop-blur-sm">{`+ ${productDetails.technologies.length - 3}`}</span>
+                            <span className="px-3 py-1 rounded-full text-sm text-gray-800 font-normal bg-black/5 border border-black/5 backdrop-blur-sm">{`+ ${productDetails.technologies.length - 3}`}</span>
                         )
                     }
                 </div>
@@ -81,7 +83,7 @@ function ProductCard({productDetails}){
                 <motion.div  className="[transform-origin:left]"
                whileHover={{ scaleX: 1.07 }}
                transition={{ duration: 0.2 }}>
-                    <Link href={productDetails.Link} className="flex items-center text-sm font-medium text-white">
+                    <Link href={productDetails.Link} className="flex items-center text-sm font-medium text-black">
                         More Details
                         <ArrowUpRight className="ml-1 h-4 w-4" />
                     </Link>
@@ -92,8 +94,8 @@ function ProductCard({productDetails}){
                 isOpen && (
                     <div ref={modalRef} className="w-full h-screen flex absolute z-10 text-white left-0 top-8 bg-[rgba(16,24,40,0.8)] ">
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-0 w-11/12 h-5/6 rounded-2xl m-auto justify-cente">
-                                <div className="relative rounded-l-2xl flex-1">
-                                    <img className='w-full h-full rounded-t-2xl md:rounded-l-2xl md:rounded-none' src={projectImage} alt="" />
+                                <div className="relative rounded-l-2xl flex-1 h-90 md:h-100">
+                                    <img className='w-full h-full rounded-t-2xl md:rounded-l-2xl md:rounded-none' src={productDetails.imageURL} alt="" />
 
                                     <button
                                         variant="ghost"
@@ -107,11 +109,11 @@ function ProductCard({productDetails}){
 
                                 <div className="flex-1 rounded-r-2xl bg-gradient-to-br p-14 from-gray-700 via-gray-800 to-gray-900 overflow-y-visible md:overflow-y-scroll">
                                     <div className="flex items-center gap-4 mb-8">
-                                        <div className="bg-amber-700 rounded-full p-2">
+                                        <div className="bg-gradient-to-l from-[#4286f4] to-[#373B44] cursor-pointer rounded-full p-2">
                                             <Sparkles className="h-6 w-6 text-white" />
                                         </div>
                                         <div className="flex flex-col gap-1">
-                                            <span className="text-sm text-gray-300 block">Spartial Computing</span>
+                                            <span className="text-sm text-gray-300 block">{productDetails.category}</span>
                                             <span className="text-sm text-gray-300 block">{productDetails.year}</span>
                                         </div>
                                     </div>
@@ -137,21 +139,22 @@ function ProductCard({productDetails}){
                                     </div>
 
                                     <div className="flex items-center gap-6 mt-10">
-                                        <a href={productDetails.link} target="_blank" className="flex items-center gap-2 text-lg rounded-sm font-normal px-4 py-2 bg-gradient-to-l from-[#4286f4] to-[#373B44] cursor-pointer">
+                                        <a href={productDetails.prodLink} target="_blank" className="flex items-center gap-2 text-lg rounded-sm font-normal hover:opacity-80 px-4 py-2 bg-gradient-to-l from-[#4286f4] to-[#373B44] cursor-pointer">
                                             View Project
                                             <ArrowUpRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
                                         </a>
-                                        <Link></Link>
-                                        <a href={productDetails.Github} target="_blank" className="flex items-center gap-2 text-lg rounded-sm font-normal px-4 py-2 border-1 border-gray-600 cursor-pointer">
+                                        {/* <a href={productDetails.Github} target="_blank" className="flex items-center gap-2 text-lg rounded-sm font-normal px-4 py-2 border-1 border-gray-600 cursor-pointer">
                                         <Github className="mr-2 h-4 w-4" />
                                             Source Code
-                                        </a>
+                                        </a> */}
                                     </div>
                                 </div>
                             </div>
                         </div>
                 )
             }
+
+
         </motion.div>
     )
 }

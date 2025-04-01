@@ -20,7 +20,7 @@ function Footer(){
                             <Mail width={20} height={20} strokeWidth={1.2} stroke="#282828"/>
                         </motion.a>
 
-                        <motion.a  href="https://www.linkedin.com/in/thejonasjon" target="_blank"
+                        <motion.a  href="https://www.linkedin.com/in/jonas-sewanu-aa3205318/" target="_blank"
                             whileHover={{scale: 1.1}}
                             transition={{duration: 0.5, ease: "easeInOut"}}
                         >

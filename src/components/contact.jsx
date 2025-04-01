@@ -59,7 +59,7 @@ function Contact(){
                              <Mail width={20} height={20} strokeWidth={1.2} stroke="#282828"/>
                         </a>
 
-                        <a href="https://www.linkedin.com/in/thejonasjon" className="border rounded border-gray-300 py-1 px-2 hover:bg-gray-200" target="_blank">
+                        <a href="https://www.linkedin.com/in/jonas-sewanu-aa3205318/" className="border rounded border-gray-300 py-1 px-2 hover:bg-gray-200" target="_blank">
                             <Linkedin stroke="#282828" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}/>
                         </a>
 

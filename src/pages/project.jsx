@@ -3,7 +3,7 @@ import { useRef } from "react";
 import ProjectCard from "./projectCard";
 import { ArrowBigUp, ArrowUp, ArrowUp01, ArrowUpRight } from "lucide-react";
 
-function Projects() {
+function Project() {
     return (
         <section id="projects" className="relative">
             <div className="px-8 md:px-10 py-20 h-full w-full bg-[radial-gradient(ellipse_at_center,_#111827_0%,_#030712_50%,_black_100%)]">
@@ -98,7 +98,7 @@ function Projects() {
                             }
                         },
 
-                    ].slice(0,3).map((project, index) => (
+                    ].map((project, index) => (
                         <ProjectFadeIn key={index} {...project} />
                     ))}
                 </div>
@@ -134,4 +134,4 @@ function ProjectFadeIn(props) {
     );
 }
 
-export default Projects;
+export default Project;
